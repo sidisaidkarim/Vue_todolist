@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/vue"></script>
+    <script type="text/javascript" src="data.json"></script>
+  </head>
+  <style type="text/css">
+   #container{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height:100vh;
+   }
+   #el button{
+     background-color: #ff6666;
+   }
+   #el li{
+     list-style: none;
+     font-size: 1.3em
+   }
+
+  </style>
+
+  <body>
+    <div id="container">
+
+
+        <div id="el">
+          <todo-item></todo-item>
+          <h1> liste de choses à faire : {{cnt}}</h1>
+
+          <ul v-for="(t,index) in tasks">
+
+            <li>
+             <button v-on:click="delet(index)">X</button>  {{t}}
+            </li>
+          </ul>
+          <input v-on:keyup.enter="ajouter" v-model="msg" placeholder="Ajouter une tache"/>
+           <br /><br />
+           <button v-on:click="deletall" id="deletall" v-if="ok">tout supprimer</button>
+        </div>
+
+          <!-- Create an instance of the todo-item component -->
+
+
+    </div>
+
+
+    <script  src="index.js"></script>
+  </body>
+
+</html>
