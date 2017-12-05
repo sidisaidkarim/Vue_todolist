@@ -27,7 +27,7 @@
 
         <div id="el">
           <todo-item></todo-item>
-          <h1> liste de choses à faire : {{cnt}}</h1>
+          <h1> liste de choses à faire : {{cmt}}</h1>
 
           <ul v-for="(t,index) in tasks">
 
@@ -37,7 +37,7 @@
           </ul>
           <input v-on:keyup.enter="ajouter" v-model="msg" placeholder="Ajouter une tache"/>
            <br /><br />
-           <button v-on:click="deletall" id="deletall" v-if="ok">tout supprimer</button>
+           <button v-on:click="deletall" id="deletall" v-if="bt_visible">tout supprimer</button>
         </div>
 
           <!-- Create an instance of the todo-item component -->

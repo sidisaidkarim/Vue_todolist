@@ -5,29 +5,29 @@ new Vue({
   data:{
     tasks:[],
     msg:'',
-    cnt:0,
-    ok:false
+    cmt:0,
+    bt_visible:false
   },
   methods:{
     ajouter:function(){
       if(this.msg != ''){
       this.tasks.push(this.msg);
       this.msg='';
-      this.cnt ++;
-      this.ok=true;
+      this.cmt ++;
+      this.bt_visible=true;
 
     }
     },
     delet:function(index){
       this.tasks.splice(index,1);
-      this.cnt --;
-      if(this.cnt=== 0){this.ok=false;}
+      this.cmt --;
+      if(this.cmt=== 0){this.bt_visible=false;}
 
     },
     deletall:function(){
       this.tasks = [];
-      this.cnt=0;
-      this.ok=false;
+      this.cmt=0;
+      this.bt_visible=false;
 
     }
   }
